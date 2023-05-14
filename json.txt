@@ -1,0 +1,40 @@
+O usuário faz uma autenticação normal com user e password;
+
+Essa autenticação sendo erada com sucesso gera um token 
+(código único de autenticação);
+
+Esse token é entregue ao usuário como uma resposta da autenticação
+E todas as claims subsequentes que vierem para API tem que ser junto com 
+a API para que seja sempre validado que aquela requisição foi feita por
+um usuário já cadastrado e verificado;
+
+Token = String Codificada em base64, mas ele não é criptografado.
+
+Com o JWT pode-se gerar tokens e verificar também.
+- Gero quando o usuário fizer uma autenticação
+- Verifico toda vez que o usuário me enviar um token junto a requisição,
+sem esse token não dá para permitir o acesso a rota.
+
+JWT é dividido em três partes, no qual é feito por uma "assinatura"
+
+jwt.sign()
+
+Header - Metadados padrões do JWT
+Payload - Informações que permitem identificar melhor o usuário depois, 
+ou seja, as claims. 
+Não insira muitos dados para não pesar e nem dados sensíveis para não
+expor a sua aplicação
+Signature - Algo que somente o servidor pode fazer, porque ele vai ter
+uma senha "secret" que permitirá o acesso. - Ela que garante a autenticidade
+do token, porque a menos que alguém de fora conheça ele não terá acesso 
+a nada. 
+
+O ponto negativo disso é que ao conhecer, por esse secret ser comum a 
+todos os usuários naquele server, se um cai todos caem tbm.
+
+--- 
+https://www.base64decode.org/
+https://www.luiztools.com.br/post/autenticacao-json-web-token-jwt-em-nodejs/
+https://www.youtube.com/watch?v=D0gpL8-DVrc
+
+
