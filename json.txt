@@ -33,8 +33,14 @@ O ponto negativo disso é que ao conhecer, por esse secret ser comum a
 todos os usuários naquele server, se um cai todos caem tbm.
 
 --- 
+
+cliente - jwt - Cookie ou localstorage - ao entrar na rota de logout
+Servidor - O token vai expirar automaticamente dentro de alguns minutos 
+Acelerar esse processo pode-se criar uma blacklist
+
+Além de verificar a assinatura em si vamos verificar se aquele token que temos já naõ expirou
+
+
 https://www.base64decode.org/
 https://www.luiztools.com.br/post/autenticacao-json-web-token-jwt-em-nodejs/
 https://www.youtube.com/watch?v=D0gpL8-DVrc
-
-
